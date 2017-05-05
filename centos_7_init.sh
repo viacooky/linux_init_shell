@@ -7,8 +7,6 @@ yum clean all
 yum makecache
 yum update -y
 yum install -y epel-release git net-tools htop saidar
-wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel.repo
-
 # 
 yum install -y zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
