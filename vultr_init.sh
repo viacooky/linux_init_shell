@@ -7,7 +7,7 @@ yum makecache
 yum update -y
 yum install -y epel-release git net-tools htop saidar docker \
 cc gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite \
-sqlite-devel openssl-devel zsh wget patch
+sqlite-devel openssl-devel zsh wget patch make
 
 git clone https://github.com/pyenv/pyenv.git /root/.pyenv
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> /root/.zshrc
