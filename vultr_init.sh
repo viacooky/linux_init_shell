@@ -33,8 +33,8 @@ echo '}' >> /root/config/ss.json
 echo_supervisord_conf > /etc/supervisord.conf
 mkdir /root/config/supervisor_config
 mkdir /root/config/supervisor_config/logs
-echo [include] >> /etc/supervisord.conf
-echo files = /root/config/supervisor_config/*.ini >> /etc/supervisord.conf
+echo '[include]' >> /etc/supervisord.conf
+echo 'files = /root/config/supervisor_config/*.ini' >> /etc/supervisord.conf
 touch /root/config/supervisor_config/shadowsocks.ini
 echo '[program:shadowsocks]' >> /root/config/supervisor_config/shadowsocks.ini
 echo 'command=ssserver -c /root/config/ss.json  ; 需要执行的命令 wd' >> /root/config/supervisor_config/shadowsocks.ini
