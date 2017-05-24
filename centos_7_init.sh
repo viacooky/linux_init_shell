@@ -6,12 +6,12 @@ wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-
 yum clean all
 yum makecache
 yum update -y
-yum install -y epel-release git net-tools htop saidar
+yum install -y epel-release git net-tools htop saidar docker
 # 
 yum install -y zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-wget -O ~/.zshrc https://raw.githubusercontent.com/viacooky/linux_init_shell/master/.zshrc
-source ~/.zshrc
+
+
 
 yum install -y python-pip
 rm -rf /root/.pip
