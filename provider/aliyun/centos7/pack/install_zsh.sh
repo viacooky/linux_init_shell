@@ -5,3 +5,4 @@ yum install -y zsh
 sh -c "$(wget -O - https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed 's:env zsh -l::g' | sed 's:chsh -s .*$::g')"
 wget -O ~/.zshrc https://github.com/viacooky/shell_script/raw/master/configs/zsh/.zshrc
 source ~/.zshrc
+chsh -s /bin/zsh
