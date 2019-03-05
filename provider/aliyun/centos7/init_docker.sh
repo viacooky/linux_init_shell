@@ -1,13 +1,17 @@
 #!/bin/bash
 
 echo "
-Aliyun CentOS 7 初始化脚本
+#############################################################################
+# Description:      阿里云CentOS7初始化 + Docker                             #
+# Github:           https://github.com/viacooky/shell_script                #
+#############################################################################
 
 即将执行如下操作：
     * 替换yum源为阿里云
     * 安装必备工具包(epel-release git net-tools)
     * 清理AliYun国内版后台服务(需要重启)
     * 安装zsh
+    * 安装docker，并开机启动(docker docker-compose)
 "
 
 read -r -p "是否执行? [Y/n] " input
@@ -19,11 +23,10 @@ case $input in
         sh -c "$(wget https://github.com/viacooky/shell_script/raw/master/provider/aliyun/centos7/pack/replace_yum_repos.sh -O -)"
 
         echo "================== [ 安装基础包 ] ====================="
-        sh -c "$(wget https://github.com/viacooky/shell_script/raw/master/provider/aliyun/centos7/pack/install_base.sh -O -)"
+        yum install -y epel-release git net-tools        
 
         echo "================== [ 安装 on-my-zsh ] ====================="
         sh -c "$(wget https://github.com/viacooky/shell_script/raw/master/provider/aliyun/centos7/pack/install_zsh.sh -O -)"
-        
 
         echo "================== [ 清理AliYun国内版后台服务 ] ====================="
         # 脚本来自 https://github.com/FanhuaCloud/AliYunServicesClear"

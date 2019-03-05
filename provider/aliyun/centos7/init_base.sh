@@ -1,11 +1,15 @@
 #!/bin/bash
 
 echo "
-Aliyun CentOS 7 初始化脚本
+#############################################################################
+# Description:      阿里云CentOS7初始化                                      #
+# Github:           https://github.com/viacooky/shell_script                #
+#############################################################################
+
 
 即将执行如下操作：
     * 替换yum源为阿里云
-    * 安装必备工具包(epel-release git net-tools)
+    * 安装必备工具包 (epel-release git net-tools)
     * 清理AliYun国内版后台服务(需要重启)
     * 安装zsh
 "
