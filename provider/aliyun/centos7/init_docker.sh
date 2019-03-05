@@ -29,8 +29,7 @@ case $input in
         sh -c "$(wget https://github.com/viacooky/shell_script/raw/master/provider/aliyun/centos7/pack/install_zsh.sh -O -)"
 
         echo "================== [ 清理AliYun国内版后台服务 ] ====================="
-        # 脚本来自 https://github.com/FanhuaCloud/AliYunServicesClear"
-        sh -c "$(wget https://raw.githubusercontent.com/FanhuaCloud/AliYunServicesClear/master/uninstall.sh -O -)"
+        sh -c "$(wget https://github.com/viacooky/shell_script/raw/master/provider/aliyun/centos7/pack/uninstall_aegis.sh -O -)"
 
         echo "================== [ 安装 docker ] ====================="
         sh -c "$(wget https://github.com/viacooky/shell_script/raw/master/provider/aliyun/centos7/pack/install_docker.sh -O -)"

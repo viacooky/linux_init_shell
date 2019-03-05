@@ -6,7 +6,7 @@
 
 - 替换 yum 源为阿里云
 - 安装必备工具包 (epel-release git net-tools)
-- 清理 AliYun 国内版后台服务(需要重启) from [AliYunServicesClear](https://github.com/FanhuaCloud/AliYunServicesClear)
+- 清理 AliYun 国内版后台服务(需要重启)
 - 安装 zsh
 
 `sh -c "$(wget https://git.io/aliyun_centos_init.sh -O -)"`
@@ -19,7 +19,7 @@ OR
 
 - 替换 yum 源为阿里云
 - 安装必备工具包 (epel-release git net-tools)
-- 清理 AliYun 国内版后台服务(需要重启) from [AliYunServicesClear](https://github.com/FanhuaCloud/AliYunServicesClear)
+- 清理 AliYun 国内版后台服务(需要重启)
 - 安装 zsh
 - 安装 docker，并开机启动 (docker docker-compose)
 

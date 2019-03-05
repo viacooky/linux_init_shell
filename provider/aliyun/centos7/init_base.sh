@@ -23,14 +23,13 @@ case $input in
         sh -c "$(wget https://github.com/viacooky/shell_script/raw/master/provider/aliyun/centos7/pack/replace_yum_repos.sh -O -)"
 
         echo "================== [ 安装基础包 ] ====================="
-        sh -c "$(wget https://github.com/viacooky/shell_script/raw/master/provider/aliyun/centos7/pack/install_base.sh -O -)"
+        yum install -y epel-release git net-tools        
 
         echo "================== [ 安装 on-my-zsh ] ====================="
         sh -c "$(wget https://github.com/viacooky/shell_script/raw/master/provider/aliyun/centos7/pack/install_zsh.sh -O -)"
 
         echo "================== [ 清理AliYun国内版后台服务 ] ====================="
-        # 脚本来自 https://github.com/FanhuaCloud/AliYunServicesClear"
-        sh -c "$(wget https://raw.githubusercontent.com/FanhuaCloud/AliYunServicesClear/master/uninstall.sh -O -)"
+        sh -c "$(wget https://github.com/viacooky/shell_script/raw/master/provider/aliyun/centos7/pack/uninstall_aegis.sh -O -)"
 
         echo "================== [ 完成 ] ====================="
         echo "请手工重启..."

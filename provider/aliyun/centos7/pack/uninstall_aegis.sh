@@ -1,23 +1,30 @@
 #! /bin/bash
 
-# 卸载安骑士
-sh -c "$(wget http://update.aegis.aliyun.com/download/uninstall.sh -O -)"
-sh -c "$(wget http://update.aegis.aliyun.com/download/quartz_uninstall.sh -O -)"
-
-# 删除残余
-pkill aliyun-service
-rm -fr /etc/init.d/agentwatch /usr/sbin/aliyun-service
+#aegis
+sudo sh -c "$(wget http://update.aegis.aliyun.com/download/quartz_uninstall.sh -O -)"
 rm -rf /usr/local/aegis*
 
-# 阻断IP
-iptables -I INPUT -s 140.205.201.0/28 -j DROP
-iptables -I INPUT -s 140.205.201.16/29 -j DROP
-iptables -I INPUT -s 140.205.201.32/28 -j DROP
-iptables -I INPUT -s 140.205.225.192/29 -j DROP
-iptables -I INPUT -s 140.205.225.200/30 -j DROP
-iptables -I INPUT -s 140.205.225.184/29 -j DROP
-iptables -I INPUT -s 140.205.225.183/32 -j DROP
-iptables -I INPUT -s 140.205.225.206/32 -j DROP
-iptables -I INPUT -s 140.205.225.205/32 -j DROP
-iptables -I INPUT -s 140.205.225.195/32 -j DROP
-iptables -I INPUT -s 140.205.225.204/32 -j DROP
+# agentwatch
+systemctl stop agentwatch.service
+systemctl disable agentwatch.service
+rm -rf /run/systemd/generator.late/agentwatch.service
+rm -rf /etc/rc.d/init.d/agentwatch*
+
+# aliyun.service
+systemctl stop aliyun.service
+systemctl disable aliyun.service
+rm -rf /etc/systemd/system/aliyun.service
+rm -rf /usr/sbin/aliyun*
+rm -rf /usr/local/share/aliyun*
+
+
+# cloudmonitor
+/usr/local/cloudmonitor/wrapper/bin/cloudmonitor.sh stop | /usr/local/cloudmonitor/wrapper/bin/cloudmonitor.sh remove
+rm -rf /run/systemd/generator.late/cloudmonitor.service
+rm -rf /usr/local/cloudmonitor
+
+
+find /etc/rc.d/ -name "*agentwatch" -print0 | xargs -0 rm -rf
+find /etc/rc.d/ -name "*aegis" -print0 | xargs -0 rm -rf
+
+# pip uninstall cloud-init -y
