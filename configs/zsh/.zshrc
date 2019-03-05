@@ -52,7 +52,7 @@ ZSH_THEME="bureau"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker pip python sudo pyenv yum)
+plugins=(git sudo yum)
 
 source $ZSH/oh-my-zsh.sh
 
